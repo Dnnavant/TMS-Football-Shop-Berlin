@@ -1,0 +1,23 @@
+{
+  "links": [
+    { "label": "Home", "href": "/" },
+    { "label": "Shop", "href": "https://your-shopify-domain.com" },
+    {
+      "label": "Services",
+      "children": [
+        { "label": "O-Zone Power Cleaning", "href": "/#service-ozone" },
+        { "label": "Consulting", "href": "/#service-consulting" },
+        { "label": "Reconditioning", "href": "/#service-reconditioning" }
+      ]
+    },
+    { "label": "Gallery", "href": "/#gallery" },
+    { "label": "Contact Us", "href": "/#contact" }
+  ],
+  "shop": { "label": "Shop", "href": "https://your-shopify-domain.com" },
+  "sales": { "label": "Sales", "href": "https://your-shopify-domain.com/collections/sale" },
+  "socials": [
+    { "label": "Instagram", "href": "https://instagram.com/your-handle", "icon": "instagram" },
+    { "label": "Facebook", "href": "https://facebook.com/your-page", "icon": "facebook" },
+    { "label": "X", "href": "https://x.com/your-handle", "icon": "x" }
+  ]
+}
