@@ -8,6 +8,39 @@
       "contact": "Kontakt",
       "sales": "Sales"
     },
+    "announcementBar": {
+      "message": "Saisonstart-Angebote diese Woche!",
+      "buttons": {
+        "helmets_sale": { "primary": "Jetzt ansehen", "secondary": "Beratung buchen" },
+        "shoulder_pads": { "primary": "Angebot sichern", "secondary": "Größenberatung" },
+        "reconditioning": { "primary": "Service buchen", "secondary": "Mehr erfahren" }
+      },
+      "offers": {
+        "helmets_sale": [
+          { "discount": "-15%", "product": "Helme", "detail": "Alle Größen", "color": "amber" },
+          { "discount": "-10%", "product": "Shoulderpads", "detail": "Neue Kollektion", "color": "amber" },
+          { "discount": "GRATIS", "product": "Beratung", "detail": "Bei jedem Kauf", "color": "green" },
+          { "discount": "NEU", "product": "Zubehör", "detail": "Handschuhe & Co", "color": "blue" }
+        ],
+        "shoulder_pads": [
+          { "discount": "-20%", "product": "Schulterpolster", "detail": "Alle Modelle", "color": "amber" },
+          { "discount": "-15%", "product": "Helme", "detail": "Riddell & Schutt", "color": "amber" },
+          { "discount": "GRATIS", "product": "Anpassung", "detail": "Vor Ort", "color": "green" },
+          { "discount": "NEU", "product": "Schuhe", "detail": "Nike & Adidas", "color": "blue" }
+        ],
+        "reconditioning": [
+          { "discount": "10 JAHRE", "product": "Garantie", "detail": "Riddell Helme", "color": "green" },
+          { "discount": "O-ZONE", "product": "Reinigung", "detail": "Geruchsbeseitigung", "color": "blue" },
+          { "discount": "GRATIS", "product": "Inspektion", "detail": "Sicherheitscheck", "color": "green" },
+          { "discount": "NEU", "product": "Lackierung", "detail": "Nach Hersteller", "color": "purple" }
+        ]
+      },
+      "info": {
+        "consulting": "Kostenlose Beratung",
+        "delivery": "Schnelle Lieferung",
+        "experience": "20 Jahre Erfahrung"
+      }
+    },
     "banner": {
       "helmets_sale": {
         "subtitle": "Saisonstart Special",
@@ -37,7 +70,14 @@
     "services": {
       "ozone": {
         "title": "O-Zone Power Cleaning",
-        "description": "Geruchsbeseitigung & Hygienereinigung für Ausrüstung."
+        "description": "Geruchsbeseitigung & Hygienereinigung für Ausrüstung.",
+        "highlights": [
+          "Entfernt hartnäckige Gerüche aus Helmen, Shoulderpads und Bekleidung",
+          "Reduziert Bakterien, Viren und Schimmel durch Ozon-Technologie",
+          "Schonend für Materialien – ideal für Sport- und Schutzausrüstung",
+          "Schneller Service – perfekt für Teams und Vereine"
+        ],
+        "cta": "Mehr Inhalte bei O‑Zone"
       },
       "consulting": {
         "title": "Consulting",
@@ -106,6 +146,39 @@
       "contact": "Contact",
       "sales": "Sales"
     },
+    "announcementBar": {
+      "message": "Season-start deals this week!",
+      "buttons": {
+        "helmets_sale": { "primary": "View Now", "secondary": "Book Consultation" },
+        "shoulder_pads": { "primary": "Claim Offer", "secondary": "Size Advice" },
+        "reconditioning": { "primary": "Book Service", "secondary": "Learn More" }
+      },
+      "offers": {
+        "helmets_sale": [
+          { "discount": "-15%", "product": "Helmets", "detail": "All sizes", "color": "amber" },
+          { "discount": "-10%", "product": "Shoulder Pads", "detail": "New collection", "color": "amber" },
+          { "discount": "FREE", "product": "Consultation", "detail": "With every purchase", "color": "green" },
+          { "discount": "NEW", "product": "Accessories", "detail": "Gloves & more", "color": "blue" }
+        ],
+        "shoulder_pads": [
+          { "discount": "-20%", "product": "Shoulder Pads", "detail": "All models", "color": "amber" },
+          { "discount": "-15%", "product": "Helmets", "detail": "Riddell & Schutt", "color": "amber" },
+          { "discount": "FREE", "product": "Fitting", "detail": "On site", "color": "green" },
+          { "discount": "NEW", "product": "Cleats", "detail": "Nike & Adidas", "color": "blue" }
+        ],
+        "reconditioning": [
+          { "discount": "10 YEARS", "product": "Warranty", "detail": "Riddell helmets", "color": "green" },
+          { "discount": "O-ZONE", "product": "Cleaning", "detail": "Odor removal", "color": "blue" },
+          { "discount": "FREE", "product": "Inspection", "detail": "Safety check", "color": "green" },
+          { "discount": "NEW", "product": "Painting", "detail": "Per manufacturer", "color": "purple" }
+        ]
+      },
+      "info": {
+        "consulting": "Free consultation",
+        "delivery": "Fast delivery",
+        "experience": "20 years experience"
+      }
+    },
     "banner": {
       "helmets_sale": {
         "subtitle": "Season Start Special",
@@ -135,7 +208,14 @@
     "services": {
       "ozone": {
         "title": "O-Zone Power Cleaning",
-        "description": "Odor elimination & hygiene cleaning for equipment."
+        "description": "Odor elimination & hygiene cleaning for equipment.",
+        "highlights": [
+          "Removes persistent odors from helmets, pads and apparel",
+          "Reduces bacteria, viruses and mold using ozone technology",
+          "Gentle on materials – ideal for sports and protective gear",
+          "Fast service – great for teams and clubs"
+        ],
+        "cta": "More content at O‑Zone"
       },
       "consulting": {
         "title": "Consulting",

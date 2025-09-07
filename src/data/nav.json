@@ -13,8 +13,8 @@
     { "label": "Gallery", "href": "/#gallery" },
     { "label": "Contact Us", "href": "/#contact" }
   ],
-  "shop": { "label": "Shop", "href": "https://your-shopify-domain.com" },
-  "sales": { "label": "Sales", "href": "https://your-shopify-domain.com/collections/sale" },
+  "shop": { "label": "Shop", "href": "https://shop.tms-footballshop-berlin.de" },
+  "sales": { "label": "Sales", "href": "https://shop.tms-footballshop-berlin.de/collections/sale" },
   "socials": [
     { "label": "Instagram", "href": "https://instagram.com/your-handle", "icon": "instagram" },
     { "label": "Facebook", "href": "https://facebook.com/your-page", "icon": "facebook" },

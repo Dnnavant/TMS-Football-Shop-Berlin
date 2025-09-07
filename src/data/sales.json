@@ -1,19 +1,19 @@
 {
   "announcement": "Saisonstart-Angebote diese Woche!",
   "promos": [
-    { "title": "Helme -15%", "cta": "Zum Shop", "href": "https://your-shopify-domain.com/collections/helmets" },
-    { "title": "Shoulderpads -10%", "cta": "Jetzt sparen", "href": "https://your-shopify-domain.com/collections/shoulder-pads" }
+    { "title": "Helme -15%", "cta": "Zum Shop", "href": "https://shop.tms-footballshop-berlin.de/collections/helmets" },
+    { "title": "Shoulderpads -10%", "cta": "Jetzt sparen", "href": "https://shop.tms-footballshop-berlin.de/collections/shoulder-pads" }
   ],
   "modal": {
     "enabled": true,
     "headline": "Neue Specials!",
     "body": "Sichere dir Saison-Deals solange der Vorrat reicht.",
     "ctaText": "Angebote ansehen",
-    "ctaHref": "https://your-shopify-domain.com/collections/sale"
+    "ctaHref": "https://shop.tms-footballshop-berlin.de/collections/sale"
   },
   "floatingButton": {
     "enabled": false,
     "label": "Sales",
-    "href": "https://your-shopify-domain.com/collections/sale"
+    "href": "https://shop.tms-footballshop-berlin.de/collections/sale"
   }
 }

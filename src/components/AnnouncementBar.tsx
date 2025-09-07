@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import sales from "@/data/sales.json";
+import { useState, useEffect, useMemo } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AnnouncementBar() {
@@ -10,56 +9,41 @@ export default function AnnouncementBar() {
   const [currentAdIndex, setCurrentAdIndex] = useState(0);
   
   // Advertisement data for rotation
-  const advertisements = [
+  const advertisements = useMemo(() => [
     {
-      id: "helmets-sale",
-      title: "Riddell Speedflex Collection",
-      subtitle: "NEUE PRODUKTE",
-      description: "Die neuesten Helme mit verbesserter Sicherheit und Komfort. Jetzt mit bis zu 15% Rabatt erhältlich!",
-      primaryButton: "Jetzt ansehen",
-      primaryHref: "https://your-shopify-domain.com/collections/helmets",
-      secondaryButton: "Beratung buchen",
+      id: "helmets_sale",
+      title: t.banner.helmets_sale.title,
+      subtitle: t.banner.helmets_sale.subtitle,
+      description: t.banner.helmets_sale.description,
+      primaryButton: t.announcementBar.buttons.helmets_sale.primary,
+      primaryHref: "https://shop.tms-footballshop-berlin.de/collections/helmets",
+      secondaryButton: t.announcementBar.buttons.helmets_sale.secondary,
       secondaryHref: "/#service-consulting",
-      offers: [
-        { discount: "-15%", product: "Helme", detail: "Alle Größen", color: "amber" },
-        { discount: "-10%", product: "Shoulderpads", detail: "Neue Kollektion", color: "amber" },
-        { discount: "GRATIS", product: "Beratung", detail: "Bei jedem Kauf", color: "green" },
-        { discount: "NEU", product: "Zubehör", detail: "Handschuhe & Co", color: "blue" }
-      ]
+      offers: t.announcementBar.offers.helmets_sale
     },
     {
-      id: "shoulder-pads",
-      title: "Schulterpolster Pro Line",
-      subtitle: "SPEZIAL ANGEBOT",
-      description: "Professionelle Schulterpolster für maximale Sicherheit. Begrenzte Zeit - 20% Rabatt auf alle Modelle!",
-      primaryButton: "Angebot sichern",
-      primaryHref: "https://your-shopify-domain.com/collections/shoulder-pads",
-      secondaryButton: "Größenberatung",
+      id: "shoulder_pads",
+      title: t.banner.shoulder_pads.title,
+      subtitle: t.banner.shoulder_pads.subtitle,
+      description: t.banner.shoulder_pads.description,
+      primaryButton: t.announcementBar.buttons.shoulder_pads.primary,
+      primaryHref: "https://shop.tms-footballshop-berlin.de/collections/shoulder-pads",
+      secondaryButton: t.announcementBar.buttons.shoulder_pads.secondary,
       secondaryHref: "/#service-consulting",
-      offers: [
-        { discount: "-20%", product: "Schulterpolster", detail: "Alle Modelle", color: "amber" },
-        { discount: "-15%", product: "Helme", detail: "Riddell & Schutt", color: "amber" },
-        { discount: "GRATIS", product: "Anpassung", detail: "Vor Ort", color: "green" },
-        { discount: "NEU", product: "Schuhe", detail: "Nike & Adidas", color: "blue" }
-      ]
+      offers: t.announcementBar.offers.shoulder_pads
     },
     {
       id: "reconditioning",
-      title: "Equipment Reconditioning",
-      subtitle: "PROFESSIONELLER SERVICE",
-      description: "Lassen Sie Ihre Ausrüstung professionell aufarbeiten. Bis zu 10 Jahre Garantie bei Riddell-Helmen!",
-      primaryButton: "Service buchen",
+      title: t.banner.reconditioning.title,
+      subtitle: t.banner.reconditioning.subtitle,
+      description: t.banner.reconditioning.description,
+      primaryButton: t.announcementBar.buttons.reconditioning.primary,
       primaryHref: "/#service-reconditioning",
-      secondaryButton: "Mehr erfahren",
+      secondaryButton: t.announcementBar.buttons.reconditioning.secondary,
       secondaryHref: "/#service-ozone",
-      offers: [
-        { discount: "10 JAHRE", product: "Garantie", detail: "Riddell Helme", color: "green" },
-        { discount: "O-ZONE", product: "Reinigung", detail: "Geruchsbeseitigung", color: "blue" },
-        { discount: "GRATIS", product: "Inspektion", detail: "Sicherheitscheck", color: "green" },
-        { discount: "NEU", product: "Lackierung", detail: "Nach Hersteller", color: "purple" }
-      ]
+      offers: t.announcementBar.offers.reconditioning
     }
-  ];
+  ], [t]);
 
   // Auto-rotation effect
   useEffect(() => {
@@ -70,7 +54,7 @@ export default function AnnouncementBar() {
     return () => clearInterval(interval);
   }, [advertisements.length]);
   
-  if (!sales.announcement) return null;
+  if (!t.announcementBar?.message) return null;
   
   const currentAd = advertisements[currentAdIndex];
   
@@ -80,8 +64,15 @@ export default function AnnouncementBar() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex items-center justify-center gap-2">
-        <span>{sales.announcement}</span>
+      <a
+        href="https://shop.tms-footballshop-berlin.de"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-2"
+        aria-label="Open Shopify store"
+        title="Open Shopify store"
+      >
+        <span>{t.announcementBar.message}</span>
         <svg 
           className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" 
           fill="none" 
@@ -90,7 +81,7 @@ export default function AnnouncementBar() {
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
-      </div>
+      </a>
       
       {/* Dropdown Banner */}
       {isHovered && (
@@ -110,6 +101,8 @@ export default function AnnouncementBar() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <a 
                       href={currentAd.primaryHref} 
+                      target={currentAd.primaryHref.startsWith('http') ? "_blank" : undefined}
+                      rel={currentAd.primaryHref.startsWith('http') ? "noopener noreferrer" : undefined}
                       className="bg-amber-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-amber-400 transition-colors text-center"
                     >
                       {currentAd.primaryButton}
@@ -125,8 +118,8 @@ export default function AnnouncementBar() {
                 
                 {/* Right Side - Product Grid */}
                 <div className="grid grid-cols-2 gap-4">
-                  {currentAd.offers.map((offer, index) => (
-                    <div key={index} className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
+                  {currentAd.offers.map((offer) => (
+                    <div key={`${currentAd.id}-${offer.product}-${offer.detail}`} className="bg-white/10 backdrop-blur rounded-lg p-4 text-center">
                       <div className={`text-2xl font-bold mb-1 ${
                         offer.color === 'amber' ? 'text-amber-400' :
                         offer.color === 'green' ? 'text-green-400' :
@@ -145,9 +138,9 @@ export default function AnnouncementBar() {
             
             {/* Navigation Dots */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              {advertisements.map((_, index) => (
+              {advertisements.map((ad, index) => (
                 <button
-                  key={index}
+                  key={ad.id}
                   onClick={() => setCurrentAdIndex(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === currentAdIndex
@@ -168,19 +161,19 @@ export default function AnnouncementBar() {
                   <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm font-medium text-gray-700">Kostenlose Beratung</span>
+                  <span className="text-sm font-medium text-gray-700">{t.announcementBar.info.consulting}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm font-medium text-gray-700">Schnelle Lieferung</span>
+                  <span className="text-sm font-medium text-gray-700">{t.announcementBar.info.delivery}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm font-medium text-gray-700">20 Jahre Erfahrung</span>
+                  <span className="text-sm font-medium text-gray-700">{t.announcementBar.info.experience}</span>
                 </div>
               </div>
             </div>

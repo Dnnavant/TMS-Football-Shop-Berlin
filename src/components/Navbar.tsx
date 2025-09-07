@@ -2,6 +2,8 @@
 
 import nav from "@/data/nav.json";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import LanguageSelector from "./LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -27,7 +29,7 @@ export default function Navbar() {
   // Create translated navigation links
   const links: NavItem[] = [
     { label: t.nav.home, href: "/" },
-    { label: t.nav.shop, href: "https://your-shopify-domain.com" },
+    { label: t.nav.shop, href: nav.shop.href },
     {
       label: t.nav.services,
       children: [
@@ -44,17 +46,32 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
       <nav className="mx-auto flex max-w-6xl items-center justify-between p-3">
         {/* Brand */}
-        <a href="/" className="text-2xl font-extrabold tracking-tight">TMS Footballshop Berlin</a>
+        <Link href="/" className="flex items-center" aria-label="TMS Footballshop Berlin">
+          <Image
+            src="/TMS LOGO.svg"
+            alt="TMS Footballshop Berlin"
+            width={200}
+            height={56}
+            priority
+            className="h-10 md:h-12 w-auto"
+          />
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => {
             if (!("children" in l)) {
               const item = l as SimpleLink;
-              return (
-                <a key={item.href} href={item.href} className="text-base font-medium hover:opacity-80">
+              const isExternal = item.href.startsWith("http");
+              const baseHover = "text-base font-medium relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-200 hover:after:w-full";
+              return isExternal ? (
+                <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className={baseHover}>
                   {item.label}
                 </a>
+              ) : (
+                <Link key={item.href} href={item.href} className={baseHover}>
+                  {item.label}
+                </Link>
               );
             }
             const item = l as ServicesLink;
@@ -78,9 +95,9 @@ export default function Navbar() {
                 {servicesOpen && (
                   <div id="services-menu" role="menu" className="absolute left-0 mt-2 w-56 rounded-xl border bg-white shadow-lg p-1">
                     {item.children.map((c) => (
-                      <a key={c.href} href={c.href} className="block rounded-lg px-3 py-2 text-sm hover:bg-gray-100" role="menuitem" tabIndex={0}>
+                      <Link key={c.href} href={c.href} className="block rounded-lg px-3 py-2 text-sm hover:bg-gray-100 transition-colors duration-150 hover:translate-x-0.5" role="menuitem" tabIndex={0}>
                         {c.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -91,7 +108,7 @@ export default function Navbar() {
           {/* Language selector and Sales button */}
           <div className="flex items-center gap-4">
             <LanguageSelector />
-            <a href={nav.sales.href} className="rounded-full px-4 py-2 text-base font-semibold bg-black text-white hover:opacity-90 shadow">
+            <a href={nav.sales.href} target="_blank" rel="noopener noreferrer" className="rounded-full px-4 py-2 text-base font-semibold bg-black text-white shadow transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-lg">
               {t.nav.sales}
             </a>
           </div>
@@ -116,10 +133,15 @@ export default function Navbar() {
             {links.map((l) => {
               if (!("children" in l)) {
                 const item = l as SimpleLink;
-                return (
-                  <a key={item.href} href={item.href} className="block px-2 py-2 rounded-md hover:bg-gray-100 text-base">
+                const isExternal = item.href.startsWith("http");
+                return isExternal ? (
+                  <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="block px-2 py-2 rounded-md hover:bg-gray-100 text-base transition-colors">
                     {item.label}
                   </a>
+                ) : (
+                  <Link key={item.href} href={item.href} className="block px-2 py-2 rounded-md hover:bg-gray-100 text-base transition-colors">
+                    {item.label}
+                  </Link>
                 );
               }
               const item = l as ServicesLink;
@@ -127,7 +149,7 @@ export default function Navbar() {
             })}
             <div className="space-y-3">
               <LanguageSelector />
-              <a href={nav.sales.href} className="inline-flex w-full justify-center rounded-full px-4 py-2 text-base font-semibold bg-black text-white hover:opacity-90">
+              <a href={nav.sales.href} target="_blank" rel="noopener noreferrer" className="inline-flex w-full justify-center rounded-full px-4 py-2 text-base font-semibold bg-black text-white hover:opacity-90">
                 {t.nav.sales}
               </a>
             </div>

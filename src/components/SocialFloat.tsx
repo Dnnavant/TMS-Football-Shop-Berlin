@@ -22,7 +22,7 @@ const icons: Record<string, JSX.Element> = {
 export default function SocialFloat() {
   if (!nav.socials?.length) return null;
   return (
-    <div className="fixed left-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-3 z-40" aria-label="Social media links">
+    <div className="fixed right-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-3 z-40" aria-label="Social media links">
       {nav.socials.map((s) => (
         <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer" className="grid place-items-center h-10 w-10 rounded-full bg-black text-white shadow hover:opacity-90" aria-label={s.label} title={s.label}>
           {icons[s.icon] ?? <span className="text-xs">{s.label[0]}</span>}

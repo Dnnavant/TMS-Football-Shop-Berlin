@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import bannerData from "@/data/banner.json";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -28,7 +28,7 @@ export default function Banner() {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   // Create advertisements with translations
-  const advertisements = [
+  const advertisements = useMemo(() => [
     {
       id: "helmets-sale",
       title: t.banner.helmets_sale.title,
@@ -37,12 +37,12 @@ export default function Banner() {
       image: "https://images.unsplash.com/photo-1513171920216-2640b288471b?q=80&w=2000&auto=format&fit=crop",
       primaryButton: {
         text: t.banner.helmets_sale.primaryButton,
-        href: "https://your-shopify-domain.com/collections/helmets",
+        href: "https://shop.tms-footballshop-berlin.de/collections/helmets",
         style: "primary" as const
       },
       secondaryButton: {
         text: t.banner.helmets_sale.secondaryButton,
-        href: "https://your-shopify-domain.com/collections/sale",
+        href: "https://shop.tms-footballshop-berlin.de/collections/sale",
         style: "secondary" as const
       }
     },
@@ -54,7 +54,7 @@ export default function Banner() {
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2000&auto=format&fit=crop",
       primaryButton: {
         text: t.banner.shoulder_pads.primaryButton,
-        href: "https://your-shopify-domain.com/collections/shoulder-pads",
+        href: "https://shop.tms-footballshop-berlin.de/collections/shoulder-pads",
         style: "primary" as const
       },
       secondaryButton: {
@@ -80,15 +80,13 @@ export default function Banner() {
         style: "secondary" as const
       }
     }
-  ] as Advertisement[];
+  ] as Advertisement[], [t]);
 
   useEffect(() => {
     if (!bannerData.autoRotate) return;
-    
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % advertisements.length);
     }, bannerData.rotationInterval);
-
     return () => clearInterval(interval);
   }, [advertisements.length]);
 
@@ -111,33 +109,37 @@ export default function Banner() {
       />
       
       <div className="relative mx-auto max-w-6xl px-4 py-8 text-white h-full flex flex-col justify-center">
-        <div className="max-w-2xl">
-          <div className="text-sm font-medium text-white/80 mb-2">
+        <div className="max-w-2xl bg-black/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-2xl border border-white/10">
+          <div className="text-sm font-medium text-white mb-2">
             {currentAd.subtitle}
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
             {currentAd.title}
           </h1>
-          <p className="text-lg md:text-xl opacity-90 mb-8 max-w-xl">
+          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl">
             {currentAd.description}
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <a
               href={currentAd.primaryButton.href}
-              className={`rounded-full px-6 py-3 font-semibold transition-all duration-200 ${
+              target={currentAd.primaryButton.href.startsWith('http') ? "_blank" : undefined}
+              rel={currentAd.primaryButton.href.startsWith('http') ? "noopener noreferrer" : undefined}
+              className={`rounded-full px-6 py-3 font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
                 currentAd.primaryButton.style === "primary"
                   ? "bg-white text-black hover:bg-white/90"
-                  : "border-2 border-white text-white hover:bg-white/10"
+                  : "border-2 border-white text-white hover:bg-white/20"
               }`}
             >
               {currentAd.primaryButton.text}
             </a>
             <a
               href={currentAd.secondaryButton.href}
-              className={`rounded-full px-6 py-3 font-semibold transition-all duration-200 ${
+              target={currentAd.secondaryButton.href.startsWith('http') ? "_blank" : undefined}
+              rel={currentAd.secondaryButton.href.startsWith('http') ? "noopener noreferrer" : undefined}
+              className={`rounded-full px-6 py-3 font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
                 currentAd.secondaryButton.style === "primary"
                   ? "bg-white text-black hover:bg-white/90"
-                  : "border-2 border-white text-white hover:bg-white/10"
+                  : "border-2 border-white text-white hover:bg-white/20"
               }`}
             >
               {currentAd.secondaryButton.text}
@@ -148,9 +150,9 @@ export default function Banner() {
 
       {/* Navigation dots */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {advertisements.map((_, index) => (
+        {advertisements.map((ad, index) => (
           <button
-            key={index}
+            key={ad.id}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentIndex

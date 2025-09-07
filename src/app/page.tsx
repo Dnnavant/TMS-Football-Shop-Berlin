@@ -6,6 +6,7 @@ import InstagramFeed from "@/components/InstagramFeed";
 import ContactSection from "@/components/ContactSection";
 import GoogleMap from "@/components/GoogleMap";
 import SalesModal from "@/components/SalesModal";
+import OzoneSection from "@/components/OzoneSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Page() {
@@ -21,10 +22,7 @@ export default function Page() {
 
       {/* Services anchors for dropdown links */}
       <div className="shadow-lg">
-        <section id="service-ozone" className="mx-auto max-w-6xl px-4 min-h-screen flex flex-col justify-center">
-          <h2 className="text-2xl font-bold">{t.services.ozone.title}</h2>
-          <p className="mt-2 text-gray-600">{t.services.ozone.description}</p>
-        </section>
+        <OzoneSection />
       </div>
 
       <div className="shadow-lg">
