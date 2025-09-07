@@ -12,7 +12,7 @@
     "ctaHref": "https://your-shopify-domain.com/collections/sale"
   },
   "floatingButton": {
-    "enabled": true,
+    "enabled": false,
     "label": "Sales",
     "href": "https://your-shopify-domain.com/collections/sale"
   }

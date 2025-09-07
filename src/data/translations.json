@@ -1,0 +1,296 @@
+{
+  "de": {
+    "nav": {
+      "home": "Home",
+      "shop": "Shop",
+      "services": "Services",
+      "gallery": "Gallery",
+      "contact": "Kontakt",
+      "sales": "Sales"
+    },
+    "banner": {
+      "helmets_sale": {
+        "subtitle": "Saisonstart Special",
+        "title": "Helme -15% Rabatt",
+        "description": "Top Marken wie Riddell, Schutt & Xenith mit bis zu 15% Rabatt",
+        "primaryButton": "Helme ansehen",
+        "secondaryButton": "Alle Angebote"
+      },
+      "shoulder_pads": {
+        "subtitle": "Neue Kollektion",
+        "title": "Shoulderpads -10%",
+        "description": "Professionelle Schulterpolster für maximale Sicherheit und Komfort",
+        "primaryButton": "Jetzt kaufen",
+        "secondaryButton": "Beratung"
+      },
+      "reconditioning": {
+        "subtitle": "Professioneller Service",
+        "title": "Equipment Reconditioning",
+        "description": "Inspektion, Reparatur und Zertifizierung Ihrer Ausrüstung",
+        "primaryButton": "Service buchen",
+        "secondaryButton": "Mehr erfahren"
+      }
+    },
+    "promo": {
+      "title": "Aktuelle Specials"
+    },
+    "services": {
+      "ozone": {
+        "title": "O-Zone Power Cleaning",
+        "description": "Geruchsbeseitigung & Hygienereinigung für Ausrüstung."
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Team- und Spielerberatung, Größen- und Safety-Check."
+      },
+      "reconditioning": {
+        "title": "Reconditioning",
+        "description": "Inspektion, Reparatur, Lackierung, Zertifizierung."
+      }
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Neueste Posts von unserem Instagram",
+      "followText": "Follow us on Instagram",
+      "handle": "@tmsfootballshop_berlin",
+      "followButton": "Follow @tmsfootballshop_berlin"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Besuchen Sie uns im Shop oder schreiben Sie uns eine Nachricht",
+      "address": "Adresse",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "openingHours": "Öffnungszeiten",
+      "limitedHours": "Eingeschränkte Öffnungszeiten",
+      "limitedHoursText": "vom 06.05. bis zum 04.06.2024",
+      "limitedHoursDetails": "Mittwoch: 13 – 18 Uhr | Donnerstag: 13 – 19 Uhr\nFreitag: 15 – 19 Uhr | Samstag: 10 – 15 Uhr",
+      "closedNotice": "Wichtiger Hinweis:",
+      "closedText": "Am 27.12.2023 bleibt unser Geschäft geschlossen!\nWir sind am 28.12. und 29.12. wie gewohnt für euch da! 💪",
+      "form": {
+        "title": "Nachricht senden",
+        "name": "Name",
+        "email": "E-Mail",
+        "phone": "Telefon",
+        "subject": "Betreff",
+        "message": "Nachricht",
+        "sendButton": "Nachricht senden",
+        "subjects": {
+          "beratung": "Beratung",
+          "reconditioning": "Reconditioning",
+          "reparatur": "Reparatur",
+          "bestellung": "Bestellung",
+          "sonstiges": "Sonstiges"
+        }
+      },
+      "map": {
+        "title": "So finden Sie uns"
+      }
+    },
+    "openingHours": {
+      "monday": "Montag:",
+      "tuesday": "Dienstag – Freitag:",
+      "saturday": "Samstag:",
+      "sunday": "Sonntag & Feiertage:",
+      "closed": "geschlossen",
+      "hours": "11 – 19 Uhr",
+      "saturdayHours": "10 – 15 Uhr"
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "shop": "Shop",
+      "services": "Services",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "sales": "Sales"
+    },
+    "banner": {
+      "helmets_sale": {
+        "subtitle": "Season Start Special",
+        "title": "Helmets -15% Discount",
+        "description": "Top brands like Riddell, Schutt & Xenith with up to 15% discount",
+        "primaryButton": "View Helmets",
+        "secondaryButton": "All Offers"
+      },
+      "shoulder_pads": {
+        "subtitle": "New Collection",
+        "title": "Shoulder Pads -10%",
+        "description": "Professional shoulder pads for maximum safety and comfort",
+        "primaryButton": "Buy Now",
+        "secondaryButton": "Consultation"
+      },
+      "reconditioning": {
+        "subtitle": "Professional Service",
+        "title": "Equipment Reconditioning",
+        "description": "Inspection, repair and certification of your equipment",
+        "primaryButton": "Book Service",
+        "secondaryButton": "Learn More"
+      }
+    },
+    "promo": {
+      "title": "Current Specials"
+    },
+    "services": {
+      "ozone": {
+        "title": "O-Zone Power Cleaning",
+        "description": "Odor elimination & hygiene cleaning for equipment."
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Team and player consultation, sizing and safety check."
+      },
+      "reconditioning": {
+        "title": "Reconditioning",
+        "description": "Inspection, repair, painting, certification."
+      }
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Latest posts from our Instagram",
+      "followText": "Follow us on Instagram",
+      "handle": "@tmsfootballshop_berlin",
+      "followButton": "Follow @tmsfootballshop_berlin"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Visit us in the shop or send us a message",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "openingHours": "Opening Hours",
+      "limitedHours": "Limited Opening Hours",
+      "limitedHoursText": "from May 6 to June 4, 2024",
+      "limitedHoursDetails": "Wednesday: 1 – 6 PM | Thursday: 1 – 7 PM\nFriday: 3 – 7 PM | Saturday: 10 AM – 3 PM",
+      "closedNotice": "Important Notice:",
+      "closedText": "Our store will be closed on December 27, 2023!\nWe'll be there for you as usual on December 28-29! 💪",
+      "form": {
+        "title": "Send Message",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "subject": "Subject",
+        "message": "Message",
+        "sendButton": "Send Message",
+        "subjects": {
+          "beratung": "Consultation",
+          "reconditioning": "Reconditioning",
+          "reparatur": "Repair",
+          "bestellung": "Order",
+          "sonstiges": "Other"
+        }
+      },
+      "map": {
+        "title": "How to Find Us"
+      }
+    },
+    "openingHours": {
+      "monday": "Monday:",
+      "tuesday": "Tuesday – Friday:",
+      "saturday": "Saturday:",
+      "sunday": "Sunday & Holidays:",
+      "closed": "closed",
+      "hours": "11 AM – 7 PM",
+      "saturdayHours": "10 AM – 3 PM"
+    }
+  },
+  "fr": {
+    "nav": {
+      "home": "Accueil",
+      "shop": "Boutique",
+      "services": "Services",
+      "gallery": "Galerie",
+      "contact": "Contact",
+      "sales": "Ventes"
+    },
+    "banner": {
+      "helmets_sale": {
+        "subtitle": "Spécial Début de Saison",
+        "title": "Casques -15% de Réduction",
+        "description": "Marques premium comme Riddell, Schutt & Xenith avec jusqu'à 15% de réduction",
+        "primaryButton": "Voir les Casques",
+        "secondaryButton": "Toutes les Offres"
+      },
+      "shoulder_pads": {
+        "subtitle": "Nouvelle Collection",
+        "title": "Épaulières -10%",
+        "description": "Épaulières professionnelles pour une sécurité et un confort maximaux",
+        "primaryButton": "Acheter Maintenant",
+        "secondaryButton": "Consultation"
+      },
+      "reconditioning": {
+        "subtitle": "Service Professionnel",
+        "title": "Reconditionnement d'Équipement",
+        "description": "Inspection, réparation et certification de votre équipement",
+        "primaryButton": "Réserver Service",
+        "secondaryButton": "En Savoir Plus"
+      }
+    },
+    "promo": {
+      "title": "Offres Actuelles"
+    },
+    "services": {
+      "ozone": {
+        "title": "Nettoyage O-Zone Power",
+        "description": "Élimination des odeurs et nettoyage hygiénique pour l'équipement."
+      },
+      "consulting": {
+        "title": "Consultation",
+        "description": "Consultation d'équipe et de joueurs, vérification des tailles et de la sécurité."
+      },
+      "reconditioning": {
+        "title": "Reconditionnement",
+        "description": "Inspection, réparation, peinture, certification."
+      }
+    },
+    "gallery": {
+      "title": "Galerie",
+      "subtitle": "Derniers posts de notre Instagram",
+      "followText": "Suivez-nous sur Instagram",
+      "handle": "@tmsfootballshop_berlin",
+      "followButton": "Suivre @tmsfootballshop_berlin"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Visitez-nous en magasin ou envoyez-nous un message",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email",
+      "openingHours": "Heures d'Ouverture",
+      "limitedHours": "Heures d'Ouverture Limitées",
+      "limitedHoursText": "du 6 mai au 4 juin 2024",
+      "limitedHoursDetails": "Mercredi: 13h – 18h | Jeudi: 13h – 19h\nVendredi: 15h – 19h | Samedi: 10h – 15h",
+      "closedNotice": "Avis Important:",
+      "closedText": "Notre magasin sera fermé le 27 décembre 2023!\nNous serons là pour vous comme d'habitude les 28-29 décembre! 💪",
+      "form": {
+        "title": "Envoyer un Message",
+        "name": "Nom",
+        "email": "Email",
+        "phone": "Téléphone",
+        "subject": "Sujet",
+        "message": "Message",
+        "sendButton": "Envoyer le Message",
+        "subjects": {
+          "beratung": "Consultation",
+          "reconditioning": "Reconditionnement",
+          "reparatur": "Réparation",
+          "bestellung": "Commande",
+          "sonstiges": "Autre"
+        }
+      },
+      "map": {
+        "title": "Comment Nous Trouver"
+      }
+    },
+    "openingHours": {
+      "monday": "Lundi:",
+      "tuesday": "Mardi – Vendredi:",
+      "saturday": "Samedi:",
+      "sunday": "Dimanche & Jours Fériés:",
+      "closed": "fermé",
+      "hours": "11h – 19h",
+      "saturdayHours": "10h – 15h"
+    }
+  }
+}

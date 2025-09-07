@@ -2,10 +2,16 @@
 
 import nav from "@/data/nav.json";
 import { useEffect, useRef, useState } from "react";
+import LanguageSelector from "./LanguageSelector";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-type NavItem = { label: string; href: string } | { label: string; children: { label: string; href: string }[] };
+type SimpleLink = { label: string; href: string };
+type ServiceChild = { label: string; href: string };
+type ServicesLink = { label: string; children: ServiceChild[] };
+type NavItem = SimpleLink | ServicesLink;
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -18,7 +24,21 @@ export default function Navbar() {
     return () => window.removeEventListener("click", onClick);
   }, []);
 
-  const links = nav.links as NavItem[];
+  // Create translated navigation links
+  const links: NavItem[] = [
+    { label: t.nav.home, href: "/" },
+    { label: t.nav.shop, href: "https://your-shopify-domain.com" },
+    {
+      label: t.nav.services,
+      children: [
+        { label: t.services.ozone.title, href: "/#service-ozone" },
+        { label: t.services.consulting.title, href: "/#service-consulting" },
+        { label: t.services.reconditioning.title, href: "/#service-reconditioning" }
+      ]
+    },
+    { label: t.nav.gallery, href: "/#gallery" },
+    { label: t.nav.contact, href: "/#contact" }
+  ];
 
   return (
     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
@@ -30,15 +50,17 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6">
           {links.map((l) => {
             if (!("children" in l)) {
+              const item = l as SimpleLink;
               return (
-                <a key={(l as any).href} href={(l as any).href} className="text-sm font-medium hover:opacity-80">
-                  {(l as any).label}
+                <a key={item.href} href={item.href} className="text-sm font-medium hover:opacity-80">
+                  {item.label}
                 </a>
               );
             }
+            const item = l as ServicesLink;
             // Services dropdown (desktop)
             return (
-              <div key={(l as any).label} className="relative" ref={servicesRef}>
+              <div key={item.label} className="relative" ref={servicesRef}>
                 <button
                   type="button"
                   onClick={(e) => { e.stopPropagation(); setServicesOpen((v) => !v); }}
@@ -46,16 +68,17 @@ export default function Navbar() {
                   className="text-sm font-medium hover:opacity-80 inline-flex items-center gap-1"
                   aria-haspopup="menu"
                   aria-expanded={servicesOpen}
+                  aria-controls="services-menu"
                 >
-                  {(l as any).label}
+                  {item.label}
                   <svg width="14" height="14" viewBox="0 0 24 24" className="opacity-70">
                     <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2" />
                   </svg>
                 </button>
                 {servicesOpen && (
-                  <div role="menu" className="absolute left-0 mt-2 w-56 rounded-xl border bg-white shadow-lg p-1">
-                    {(l as any).children?.map((c: any) => (
-                      <a key={c.href} href={c.href} className="block rounded-lg px-3 py-2 text-sm hover:bg-gray-100" role="menuitem">
+                  <div id="services-menu" role="menu" className="absolute left-0 mt-2 w-56 rounded-xl border bg-white shadow-lg p-1">
+                    {item.children.map((c) => (
+                      <a key={c.href} href={c.href} className="block rounded-lg px-3 py-2 text-sm hover:bg-gray-100" role="menuitem" tabIndex={0}>
                         {c.label}
                       </a>
                     ))}
@@ -65,10 +88,13 @@ export default function Navbar() {
             );
           })}
 
-          {/* Sales button (far right) */}
-          <a href={nav.sales.href} className="rounded-full px-4 py-2 text-sm font-semibold bg-black text-white hover:opacity-90 shadow">
-            {nav.sales.label}
-          </a>
+          {/* Language selector and Sales button */}
+          <div className="flex items-center gap-4">
+            <LanguageSelector />
+            <a href={nav.sales.href} className="rounded-full px-4 py-2 text-sm font-semibold bg-black text-white hover:opacity-90 shadow">
+              {t.nav.sales}
+            </a>
+          </div>
         </div>
 
         {/* Mobile toggler */}
@@ -89,17 +115,22 @@ export default function Navbar() {
           <div className="mx-auto max-w-6xl p-3 space-y-2">
             {links.map((l) => {
               if (!("children" in l)) {
+                const item = l as SimpleLink;
                 return (
-                  <a key={(l as any).href} href={(l as any).href} className="block px-2 py-2 rounded-md hover:bg-gray-100">
-                    {(l as any).label}
+                  <a key={item.href} href={item.href} className="block px-2 py-2 rounded-md hover:bg-gray-100">
+                    {item.label}
                   </a>
                 );
               }
-              return <MobileServices key={(l as any).label} item={l as any} />;
+              const item = l as ServicesLink;
+              return <MobileServices key={item.label} item={item} />;
             })}
-            <a href={nav.sales.href} className="inline-flex w-full justify-center rounded-full px-4 py-2 text-sm font-semibold bg-black text-white hover:opacity-90">
-              {nav.sales.label}
-            </a>
+            <div className="space-y-3">
+              <LanguageSelector />
+              <a href={nav.sales.href} className="inline-flex w-full justify-center rounded-full px-4 py-2 text-sm font-semibold bg-black text-white hover:opacity-90">
+                {t.nav.sales}
+              </a>
+            </div>
           </div>
         </div>
       )}
@@ -107,7 +138,7 @@ export default function Navbar() {
   );
 }
 
-function MobileServices({ item }: { item: { label: string; children: { label: string; href: string }[] } }) {
+function MobileServices({ item }: { item: ServicesLink }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="rounded-md">

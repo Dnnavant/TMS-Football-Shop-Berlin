@@ -11,9 +11,13 @@ export default function SalesModal() {
     if (!sales.modal?.enabled) return;
     const last = typeof window !== 'undefined' ? localStorage.getItem(KEY) : null;
     const today = new Date().toDateString();
+    let timer: ReturnType<typeof setTimeout> | null = null;
     if (last !== today) {
-      setTimeout(() => setOpen(true), 800);
+      timer = setTimeout(() => setOpen(true), 800);
     }
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
   }, []);
 
   const close = () => {

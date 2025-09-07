@@ -1,0 +1,57 @@
+{
+  "advertisements": [
+    {
+      "id": "helmets-sale",
+      "title": "Helme -15% Rabatt",
+      "subtitle": "Saisonstart Special",
+      "description": "Top Marken wie Riddell, Schutt & Xenith mit bis zu 15% Rabatt",
+      "image": "https://images.unsplash.com/photo-1513171920216-2640b288471b?q=80&w=2000&auto=format&fit=crop",
+      "primaryButton": {
+        "text": "Helme ansehen",
+        "href": "https://your-shopify-domain.com/collections/helmets",
+        "style": "primary"
+      },
+      "secondaryButton": {
+        "text": "Alle Angebote",
+        "href": "https://your-shopify-domain.com/collections/sale",
+        "style": "secondary"
+      }
+    },
+    {
+      "id": "shoulder-pads",
+      "title": "Shoulderpads -10%",
+      "subtitle": "Neue Kollektion",
+      "description": "Professionelle Schulterpolster für maximale Sicherheit und Komfort",
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2000&auto=format&fit=crop",
+      "primaryButton": {
+        "text": "Jetzt kaufen",
+        "href": "https://your-shopify-domain.com/collections/shoulder-pads",
+        "style": "primary"
+      },
+      "secondaryButton": {
+        "text": "Beratung",
+        "href": "/#service-consulting",
+        "style": "secondary"
+      }
+    },
+    {
+      "id": "reconditioning",
+      "title": "Equipment Reconditioning",
+      "subtitle": "Professioneller Service",
+      "description": "Inspektion, Reparatur und Zertifizierung Ihrer Ausrüstung",
+      "image": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=2000&auto=format&fit=crop",
+      "primaryButton": {
+        "text": "Service buchen",
+        "href": "/#service-reconditioning",
+        "style": "primary"
+      },
+      "secondaryButton": {
+        "text": "Mehr erfahren",
+        "href": "/#service-ozone",
+        "style": "secondary"
+      }
+    }
+  ],
+  "autoRotate": true,
+  "rotationInterval": 5000
+}

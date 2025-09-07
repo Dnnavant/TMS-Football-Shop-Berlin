@@ -1,10 +1,12 @@
 import sales from "@/data/sales.json";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PromoSpotlight() {
+  const { t } = useLanguage();
   if (!sales.promos?.length) return null;
   return (
-    <section className="mx-auto max-w-6xl px-4 py-10">
-      <h2 className="text-2xl font-bold">Aktuelle Specials</h2>
+    <section className="mx-auto max-w-6xl px-4 min-h-screen flex flex-col justify-center">
+      <h2 className="text-2xl font-bold">{t.promo.title}</h2>
       <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         {sales.promos.map((p, i) => (
           <a key={i} href={p.href} className="group rounded-2xl border p-5 hover:shadow-lg transition">

@@ -1,13 +1,17 @@
 import nav from "@/data/nav.json";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden min-h-screen">
       <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-800 to-black opacity-80" />
-      <img
+      <Image
         src="https://images.unsplash.com/photo-1513171920216-2640b288471b?q=80&w=2000&auto=format&fit=crop"
         alt="American Football gear background"
-        className="absolute inset-0 h-full w-full object-cover"
+        fill
+        priority
+        sizes="100vw"
+        className="absolute inset-0 object-cover"
       />
       <div className="relative mx-auto max-w-6xl px-4 py-28 text-white">
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">Gear up for the Season.</h1>
