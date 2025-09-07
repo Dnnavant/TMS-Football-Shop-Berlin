@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import translations from "@/data/translations.json";
 
-type Language = "de" | "en" | "fr";
+type Language = "de" | "en";
 
 type Translations = typeof translations.de;
 

@@ -11,32 +11,7 @@ type Language = {
 
 const languages: Language[] = [
   { code: "de", name: "Deutsch", flag: "🇩🇪" },
-  { code: "en", name: "English", flag: "🇬🇧" },
-  { code: "fr", name: "Français", flag: "🇫🇷" },
-  { code: "es", name: "Español", flag: "🇪🇸" },
-  { code: "it", name: "Italiano", flag: "🇮🇹" },
-  { code: "pt", name: "Português", flag: "🇵🇹" },
-  { code: "pl", name: "Polski", flag: "🇵🇱" },
-  { code: "nl", name: "Nederlands", flag: "🇳🇱" },
-  { code: "sv", name: "Svenska", flag: "🇸🇪" },
-  { code: "da", name: "Dansk", flag: "🇩🇰" },
-  { code: "fi", name: "Suomi", flag: "🇫🇮" },
-  { code: "no", name: "Norsk", flag: "🇳🇴" },
-  { code: "cs", name: "Čeština", flag: "🇨🇿" },
-  { code: "sk", name: "Slovenčina", flag: "🇸🇰" },
-  { code: "hu", name: "Magyar", flag: "🇭🇺" },
-  { code: "ro", name: "Română", flag: "🇷🇴" },
-  { code: "bg", name: "Български", flag: "🇧🇬" },
-  { code: "hr", name: "Hrvatski", flag: "🇭🇷" },
-  { code: "sl", name: "Slovenščina", flag: "🇸🇮" },
-  { code: "et", name: "Eesti", flag: "🇪🇪" },
-  { code: "lv", name: "Latviešu", flag: "🇱🇻" },
-  { code: "lt", name: "Lietuvių", flag: "🇱🇹" },
-  { code: "el", name: "Ελληνικά", flag: "🇬🇷" },
-  { code: "mt", name: "Malti", flag: "🇲🇹" },
-  { code: "cy", name: "Cymraeg", flag: "🇨🇾" },
-  { code: "ga", name: "Gaeilge", flag: "🇮🇪" },
-  { code: "lb", name: "Lëtzebuergesch", flag: "🇱🇺" }
+  { code: "en", name: "English", flag: "🇬🇧" }
 ];
 
 export default function LanguageSelector() {
@@ -60,7 +35,7 @@ export default function LanguageSelector() {
   }, []);
 
   const handleLanguageSelect = (selectedLang: Language) => {
-    setLanguage(selectedLang.code as "de" | "en" | "fr");
+    setLanguage(selectedLang.code as "de" | "en");
     setIsOpen(false);
   };
 

@@ -1,3 +1,5 @@
+"use client";
+
 import Banner from "@/components/Banner";
 import PromoSpotlight from "@/components/PromoSpotlight";
 import InstagramFeed from "@/components/InstagramFeed";

@@ -44,7 +44,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
       <nav className="mx-auto flex max-w-6xl items-center justify-between p-3">
         {/* Brand */}
-        <a href="/" className="text-xl font-extrabold tracking-tight">TMS Footballshop Berlin</a>
+        <a href="/" className="text-2xl font-extrabold tracking-tight">TMS Footballshop Berlin</a>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
@@ -52,7 +52,7 @@ export default function Navbar() {
             if (!("children" in l)) {
               const item = l as SimpleLink;
               return (
-                <a key={item.href} href={item.href} className="text-sm font-medium hover:opacity-80">
+                <a key={item.href} href={item.href} className="text-base font-medium hover:opacity-80">
                   {item.label}
                 </a>
               );
@@ -65,7 +65,7 @@ export default function Navbar() {
                   type="button"
                   onClick={(e) => { e.stopPropagation(); setServicesOpen((v) => !v); }}
                   onKeyDown={(e) => e.key === "Escape" && setServicesOpen(false)}
-                  className="text-sm font-medium hover:opacity-80 inline-flex items-center gap-1"
+                  className="text-base font-medium hover:opacity-80 inline-flex items-center gap-1"
                   aria-haspopup="menu"
                   aria-expanded={servicesOpen}
                   aria-controls="services-menu"
@@ -91,7 +91,7 @@ export default function Navbar() {
           {/* Language selector and Sales button */}
           <div className="flex items-center gap-4">
             <LanguageSelector />
-            <a href={nav.sales.href} className="rounded-full px-4 py-2 text-sm font-semibold bg-black text-white hover:opacity-90 shadow">
+            <a href={nav.sales.href} className="rounded-full px-4 py-2 text-base font-semibold bg-black text-white hover:opacity-90 shadow">
               {t.nav.sales}
             </a>
           </div>
@@ -99,7 +99,7 @@ export default function Navbar() {
 
         {/* Mobile toggler */}
         <button
-          className="md:hidden rounded-md border px-3 py-2 text-sm"
+          className="md:hidden rounded-md border px-3 py-2 text-base"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -117,7 +117,7 @@ export default function Navbar() {
               if (!("children" in l)) {
                 const item = l as SimpleLink;
                 return (
-                  <a key={item.href} href={item.href} className="block px-2 py-2 rounded-md hover:bg-gray-100">
+                  <a key={item.href} href={item.href} className="block px-2 py-2 rounded-md hover:bg-gray-100 text-base">
                     {item.label}
                   </a>
                 );
@@ -127,7 +127,7 @@ export default function Navbar() {
             })}
             <div className="space-y-3">
               <LanguageSelector />
-              <a href={nav.sales.href} className="inline-flex w-full justify-center rounded-full px-4 py-2 text-sm font-semibold bg-black text-white hover:opacity-90">
+              <a href={nav.sales.href} className="inline-flex w-full justify-center rounded-full px-4 py-2 text-base font-semibold bg-black text-white hover:opacity-90">
                 {t.nav.sales}
               </a>
             </div>
@@ -142,7 +142,7 @@ function MobileServices({ item }: { item: ServicesLink }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="rounded-md">
-      <button className="w-full flex items-center justify-between px-2 py-2 rounded-md hover:bg-gray-100" onClick={() => setOpen((v) => !v)} aria-expanded={open}>
+      <button className="w-full flex items-center justify-between px-2 py-2 rounded-md hover:bg-gray-100 text-base" onClick={() => setOpen((v) => !v)} aria-expanded={open}>
         <span>{item.label}</span>
         <svg width="16" height="16" viewBox="0 0 24 24" className={`transition ${open ? "rotate-180" : ""}`}>
           <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -151,7 +151,7 @@ function MobileServices({ item }: { item: ServicesLink }) {
       {open && (
         <div className="ml-2 mt-1 space-y-1">
           {item.children.map((c) => (
-            <a key={c.href} href={c.href} className="block px-2 py-2 rounded-md hover:bg-gray-100">
+            <a key={c.href} href={c.href} className="block px-2 py-2 rounded-md hover:bg-gray-100 text-base">
               {c.label}
             </a>
           ))}
