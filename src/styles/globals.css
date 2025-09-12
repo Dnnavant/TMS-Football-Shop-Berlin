@@ -4,3 +4,9 @@
 
 html, body { height: 100%; }
 html { scroll-behavior: smooth; }
+
+@layer utilities {
+  .pt-section { padding-top: theme(spacing.20); }
+  /* Subtle blurred right-offset text shadow for navbar links */
+  .text-shadow-right { text-shadow: 2px 1px 4px rgba(0, 0, 0, 0.35); }
+}

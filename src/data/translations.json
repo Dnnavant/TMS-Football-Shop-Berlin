@@ -81,11 +81,26 @@
       },
       "consulting": {
         "title": "Consulting",
-        "description": "Team- und Spielerberatung, Größen- und Safety-Check."
+        "description": "Team- und Spielerberatung, Größen- und Safety-Check.",
+        "highlights": [
+          "Individuelle Spielerberatung und Größenfindung",
+          "Team-Outfitting und Sammelbestellungen",
+          "Sicherheits- und Pflegehinweise für Ausrüstung",
+          "Visiere, Decals, Zubehör – passendes Setup"
+        ],
+        "cta": "Beratung anfragen",
+        "helmetTests": "Helm‑Testergebnisse"
       },
       "reconditioning": {
         "title": "Reconditioning",
-        "description": "Inspektion, Reparatur, Lackierung, Zertifizierung."
+        "description": "Inspektion, Reparatur, Lackierung, Zertifizierung.",
+        "highlights": [
+          "Inspektion von Helm, Padding, Facemask, Hardware",
+          "Reparatur und Austausch von Komponenten",
+          "Lackierung in Herstellerqualität",
+          "Sicherheitsprüfung und Zertifizierung"
+        ],
+        "cta": "Service anfragen"
       }
     },
     "gallery": {
@@ -219,11 +234,26 @@
       },
       "consulting": {
         "title": "Consulting",
-        "description": "Team and player consultation, sizing and safety check."
+        "description": "Team and player consultation, sizing and safety check.",
+        "highlights": [
+          "Personal player advice and sizing",
+          "Team outfitting and bulk orders",
+          "Safety and equipment care guidance",
+          "Visors, decals, accessories – right setup"
+        ],
+        "cta": "Request Consultation",
+        "helmetTests": "Helmet test results"
       },
       "reconditioning": {
         "title": "Reconditioning",
-        "description": "Inspection, repair, painting, certification."
+        "description": "Inspection, repair, painting, certification.",
+        "highlights": [
+          "Inspection of helmet, padding, facemask and hardware",
+          "Repair and replacement of components",
+          "Manufacturer‑grade repainting",
+          "Safety check and certification"
+        ],
+        "cta": "Request Service"
       }
     },
     "gallery": {

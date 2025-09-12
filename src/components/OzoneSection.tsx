@@ -31,7 +31,7 @@ export default function OzoneSection() {
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 max-w-3xl w-full">
             {highlights.map((item, idx) => (
               <li key={idx} className="flex items-start gap-3 bg-white/10 backdrop-blur rounded-xl p-3 text-left">
-                <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white text-xs">✓</span>
+                <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-brand-blue text-white text-xs">✓</span>
                 <span className="text-white/90">{item}</span>
               </li>
             ))}
@@ -68,7 +68,7 @@ export default function OzoneSection() {
             href="https://www.o-zone-powercleaning.de"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-black hover:bg-white/90"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-red px-6 py-3 font-semibold text-white hover:bg-[#991b22] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
           >
             {t.services.ozone.cta}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="opacity-90">

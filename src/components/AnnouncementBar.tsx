@@ -60,7 +60,7 @@ export default function AnnouncementBar() {
   
   return (
     <div 
-      className="relative bg-amber-100 text-amber-900 text-center text-sm py-2 cursor-pointer group"
+      className="relative bg-brand-blue/10 text-brand-blue text-center text-sm py-2 cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -85,9 +85,9 @@ export default function AnnouncementBar() {
       
       {/* Dropdown Banner */}
       {isHovered && (
-        <div className="absolute top-full left-0 right-0 bg-white border border-amber-200 shadow-lg z-50">
+        <div className="absolute top-full left-0 right-0 bg-white border border-brand-blue/20 shadow-lg z-50">
           {/* Advertisement Banner */}
-          <div className="relative bg-gradient-to-r from-black via-gray-800 to-black text-white py-8 transition-all duration-1000">
+          <div className="relative bg-gradient-to-r from-brand-blue via-gray-800 to-black text-white py-8 transition-all duration-1000">
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-gray-800/90 to-black/90"></div>
             <div className="relative max-w-6xl mx-auto px-4">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">

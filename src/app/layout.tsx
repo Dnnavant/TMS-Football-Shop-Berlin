@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import SocialFloat from "@/components/SocialFloat";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import type { Metadata } from "next";
+import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   title: "TMS Footballshop Berlin",
@@ -19,6 +21,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <SocialFloat />
           {children}
+          <BackToTop />
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

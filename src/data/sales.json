@@ -1,8 +1,9 @@
 {
   "announcement": "Saisonstart-Angebote diese Woche!",
   "promos": [
-    { "title": "Helme -15%", "cta": "Zum Shop", "href": "https://shop.tms-footballshop-berlin.de/collections/helmets" },
-    { "title": "Shoulderpads -10%", "cta": "Jetzt sparen", "href": "https://shop.tms-footballshop-berlin.de/collections/shoulder-pads" }
+    { "title": "Helme – Speedflex, F7, mehr", "cta": "Helme ansehen", "href": "https://shop.tms-footballshop-berlin.de/collections/helmets", "badge": "Top Seller" },
+    { "title": "Shoulder Pads – Pro & Elite", "cta": "Pads entdecken", "href": "https://shop.tms-footballshop-berlin.de/collections/shoulder-pads", "badge": "Comfort Fit" },
+    { "title": "Cleats & Gloves", "cta": "Jetzt ausstatten", "href": "https://shop.tms-footballshop-berlin.de/collections/cleats", "badge": "New" }
   ],
   "modal": {
     "enabled": true,

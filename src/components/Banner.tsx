@@ -68,7 +68,7 @@ export default function Banner() {
       title: t.banner.reconditioning.title,
       subtitle: t.banner.reconditioning.subtitle,
       description: t.banner.reconditioning.description,
-      image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=2000&auto=format&fit=crop",
+      image: "/reconditioning-banner.png",
       primaryButton: {
         text: t.banner.reconditioning.primaryButton,
         href: "/#service-reconditioning",
@@ -98,7 +98,7 @@ export default function Banner() {
 
   return (
     <section className="relative overflow-hidden h-[50vh]">
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-800 to-black opacity-70" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/70 via-black/60 to-black/80" />
       <Image
         src={currentAd.image}
         alt={currentAd.title}
@@ -124,9 +124,9 @@ export default function Banner() {
               href={currentAd.primaryButton.href}
               target={currentAd.primaryButton.href.startsWith('http') ? "_blank" : undefined}
               rel={currentAd.primaryButton.href.startsWith('http') ? "noopener noreferrer" : undefined}
-              className={`rounded-full px-6 py-3 font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+              className={`rounded-full px-6 py-3 font-semibold text-shadow-right transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue ${
                 currentAd.primaryButton.style === "primary"
-                  ? "bg-white text-black hover:bg-white/90"
+                  ? "bg-brand-red text-white hover:bg-[#991b22]"
                   : "border-2 border-white text-white hover:bg-white/20"
               }`}
             >
@@ -136,9 +136,9 @@ export default function Banner() {
               href={currentAd.secondaryButton.href}
               target={currentAd.secondaryButton.href.startsWith('http') ? "_blank" : undefined}
               rel={currentAd.secondaryButton.href.startsWith('http') ? "noopener noreferrer" : undefined}
-              className={`rounded-full px-6 py-3 font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+              className={`rounded-full px-6 py-3 font-semibold text-shadow-right transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue ${
                 currentAd.secondaryButton.style === "primary"
-                  ? "bg-white text-black hover:bg-white/90"
+                  ? "bg-brand-red text-white hover:bg-[#991b22]"
                   : "border-2 border-white text-white hover:bg-white/20"
               }`}
             >
