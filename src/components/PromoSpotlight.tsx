@@ -25,7 +25,7 @@ export default function PromoSpotlight() {
                   {(p as any).badge}
                 </span>
               )}
-              <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
+              <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-red text-shadow-right">
                 {p.cta}
                 <span aria-hidden>→</span>
               </div>

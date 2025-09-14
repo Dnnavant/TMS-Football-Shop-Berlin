@@ -68,7 +68,7 @@ export default function OzoneSection() {
             href="https://www.o-zone-powercleaning.de"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-brand-red px-6 py-3 font-semibold text-white hover:bg-[#991b22] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-red px-6 py-3 font-semibold text-white text-shadow-right hover:bg-[#991b22] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
           >
             {t.services.ozone.cta}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="opacity-90">

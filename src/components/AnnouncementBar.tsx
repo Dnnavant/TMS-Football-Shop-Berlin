@@ -103,13 +103,13 @@ export default function AnnouncementBar() {
                       href={currentAd.primaryHref} 
                       target={currentAd.primaryHref.startsWith('http') ? "_blank" : undefined}
                       rel={currentAd.primaryHref.startsWith('http') ? "noopener noreferrer" : undefined}
-                      className="bg-amber-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-amber-400 transition-colors text-center"
+                      className="bg-amber-500 text-black px-6 py-3 rounded-full font-semibold text-shadow-right hover:bg-amber-400 transition-colors text-center"
                     >
                       {currentAd.primaryButton}
                     </a>
                     <a 
                       href={currentAd.secondaryHref} 
-                      className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors text-center"
+                      className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold text-shadow-right hover:bg-white/10 transition-colors text-center"
                     >
                       {currentAd.secondaryButton}
                     </a>

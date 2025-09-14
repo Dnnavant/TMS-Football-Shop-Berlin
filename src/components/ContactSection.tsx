@@ -194,7 +194,7 @@ export default function ContactSection() {
           <div className="mt-2 flex justify-center">
             <button
               type="submit"
-              className="inline-flex items-center bg-black text-white px-5 py-2 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-200"
+              className="inline-flex items-center bg-black text-white px-5 py-2 rounded-full font-semibold text-shadow-right hover:bg-gray-800 transition-colors duration-200"
             >
               Nachricht senden
             </button>

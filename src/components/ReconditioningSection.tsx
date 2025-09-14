@@ -24,7 +24,7 @@ export default function ReconditioningSection() {
               </ul>
             )}
             <div className="mt-8">
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-brand-red px-6 py-3 font-semibold text-white shadow hover:shadow-lg hover:-translate-y-0.5 transition hover:bg-[#991b22] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-brand-red px-6 py-3 font-semibold text-white text-shadow-right shadow hover:shadow-lg hover:-translate-y-0.5 transition hover:bg-[#991b22] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
                 {(t.services.reconditioning as any).cta ?? "Service anfragen"}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="opacity-90">
                   <path d="M7 17L17 7M7 7h10v10" />

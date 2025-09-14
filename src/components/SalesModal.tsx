@@ -34,10 +34,10 @@ export default function SalesModal() {
         <h3 className="text-xl font-bold">{sales.modal.headline}</h3>
         <p className="mt-2 text-sm text-gray-700">{sales.modal.body}</p>
         <div className="mt-5 flex items-center gap-3">
-          <a href={sales.modal.ctaHref} target="_blank" rel="noopener noreferrer" className="rounded-full bg-black px-4 py-2 text-white font-semibold">
+          <a href={sales.modal.ctaHref} target="_blank" rel="noopener noreferrer" className="rounded-full bg-black px-4 py-2 text-white font-semibold text-shadow-right">
             {sales.modal.ctaText}
           </a>
-          <button onClick={close} className="rounded-full border px-4 py-2 font-semibold">
+          <button onClick={close} className="rounded-full border px-4 py-2 font-semibold text-shadow-right">
             Später
           </button>
         </div>

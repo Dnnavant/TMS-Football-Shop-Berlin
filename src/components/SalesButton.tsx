@@ -8,7 +8,7 @@ export default function SalesButton() {
       href={sales.floatingButton.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-5 right-5 rounded-full px-5 py-3 font-semibold shadow-lg bg-black text-white hover:opacity-90"
+      className="fixed bottom-5 right-5 rounded-full px-5 py-3 font-semibold shadow-lg bg-black text-white hover:opacity-90 text-shadow-right"
       aria-label="Sales"
     >
       {sales.floatingButton.label}
